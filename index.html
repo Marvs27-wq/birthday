@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Jelyn Mae O. Agoyaoy | Strawberry 1st Birthday & Christening</title>
+  <!-- Sweet fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fff2e8 0%, #ffead9 100%);
+      font-family: 'Quicksand', 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    /* strawberry seeds pattern overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 25% 40%, rgba(227, 66, 52, 0.1) 2px, transparent 2px);
+      background-size: 35px 35px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* main invitation card */
+    .invitation-card {
+      max-width: 750px;
+      width: 100%;
+      background: #fffef8;
+      border-radius: 70px 70px 80px 80px;
+      box-shadow: 0 35px 50px -25px rgba(180, 60, 40, 0.35), 0 10px 20px rgba(0,0,0,0.05);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 180, 140, 0.6);
+      transition: transform 0.25s ease;
+    }
+
+    /* strawberry header with baby details */
+    .berry-header {
+      background: linear-gradient(135deg, #e34f3a, #c72f1f);
+      padding: 1.8rem 1.5rem 2.2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      border-bottom-left-radius: 45px;
+      border-bottom-right-radius: 45px;
+      box-shadow: 0 8px 18px rgba(150, 40, 20, 0.3);
+    }
+
+    .baby-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 0.2rem;
+      word-break: break-word;
+    }
+
+    .event-titles {
+      font-size: 1rem;
+      background: rgba(255,245,220,0.25);
+      display: inline-flex;
+      gap: 1rem;
+      padding: 0.4rem 1.4rem;
+      border-radius: 60px;
+      backdrop-filter: blur(3px);
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .leaf-deco {
+      font-size: 2.8rem;
+      position: absolute;
+      top: -12px;
+      left: 18px;
+      transform: rotate(-18deg);
+      filter: drop-shadow(0 3px 4px rgba(0,0,0,0.15));
+    }
+
+    .leaf-deco-right {
+      right: 18px;
+      left: auto;
+      transform: rotate(18deg);
+    }
+
+    /* content */
+    .invitation-content {
+      padding: 2rem 2rem 1.6rem;
+    }
+
+    .celebration-badge {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #bc4a2c;
+      background: #fff4ec;
+      display: inline-block;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing: 1px;
+    }
+
+    .dual-details {
+      background: #fff8f2;
+      border-radius: 48px;
+      padding: 1.6rem 1.8rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ffddcc;
+      box-shadow: 0 10px 18px rgba(170, 65, 35, 0.06);
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 1.3rem;
+      font-size: 1.05rem;
+      color: #492e1f;
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-icon {
+      font-size: 1.7rem;
+      min-width: 44px;
+      text-align: center;
+    }
+
+    .detail-text {
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .blessing-note {
+      background: #ffede2;
+      border-radius: 2rem;
+      padding: 0.8rem 1.2rem;
+      text-align: center;
+      margin: 1rem 0 0.8rem;
+      font-weight: 600;
+      color: #b64226;
+      border-left: 5px solid #f16a4a;
+      font-size: 0.95rem;
+    }
+
+    .strawberry-bunch {
+      font-size: 2rem;
+      text-align: center;
+      letter-spacing: 10px;
+      margin: 0.7rem 0 0.5rem;
+    }
+
+    /* action buttons - only download button now */
+    .action-panel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.4rem 0 0.8rem;
+    }
+
+    .btn {
+      border: none;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .btn-download {
+      background: #e34234;
+      color: white;
+      box-shadow: 0 8px 16px rgba(227,66,52,0.3);
+    }
+
+    .btn-download:hover {
+      background: #c22a1c;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(194,42,28,0.35);
+    }
+
+    .music-note {
+      font-size: 0.72rem;
+      background: #edd9cd;
+      border-radius: 50px;
+      padding: 0.25rem 1rem;
+      display: inline-block;
+      margin-top: 8px;
+      color: #592f1c;
+      text-align: center;
+      width: auto;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 0.9rem 1rem 1.2rem;
+      font-size: 0.7rem;
+      color: #b47c62;
+      border-top: 1px dashed #ffcfb5;
+      background: #fffbf7;
+      font-weight: 500;
+    }
+
+    @media (max-width: 550px) {
+      .invitation-card {
+        border-radius: 50px;
+      }
+      .invitation-content {
+        padding: 1.3rem;
+      }
+      .baby-name {
+        font-size: 2rem;
+      }
+      .detail-row {
+        font-size: 0.9rem;
+      }
+      .btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="balloon-container">
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+</div>
+
+<div class="invitation-card" id="invitationCard">
+  <div class="berry-header">
+    <div class="leaf-deco">🍓🌱</div>
+    <div class="leaf-deco leaf-deco-right">🍃🍓</div>
+    <div class="baby-name">JELYN MAE O. AGOYAOY</div>
+    <div class="event-titles">
+      <span>🍰 1st Birthday</span> &nbsp; ✝️ &nbsp; <span>Holy Christening</span>
+    </div>
+    <div style="margin-top: 12px; font-size: 0.9rem;">🌸 A Strawberry Celebration of Grace & First Year 🌸</div>
+  </div>
+
+  <div class="invitation-content">
+    <div class="celebration-badge">
+      🍓 You are cordially invited! 🍓
+    </div>
+    <div class="dual-details">
+      <div class="detail-row">
+        <span class="detail-icon">📅🎂</span>
+        <span class="detail-text"><strong>Thursday, June 18, 2026</strong><br> Celebration starts at 9:30 AM onwards</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">📍🏖️</span>
+        <span class="detail-text"><strong>Venue:</strong> Brgy. Kita Kita, Jojo's Private Resort</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🍓✨</span>
+        <span class="detail-text"><strong>Theme:</strong> Berry Sweet & Strawberry Delight<br> Come and share the joy of Jelyn Mae's 1st birthday & christening</span>
+      </div>
+    </div>
+    
+    <div class="blessing-note">
+      ✝️ "Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these." — Matthew 19:14 ✝️<br>
+      We joyfully celebrate Jelyn Mae's baptism and first year of life, blessed with love, laughter, and sweet blessings.
+    </div>
+    
+    <div class="strawberry-bunch">
+      🍓🍰🍓🎀🍓🍰🍓
+    </div>
+    
+    <!-- Download Invitation Button Only (Music plays automatically) -->
+    <div class="action-panel">
+      <button class="btn btn-download" id="downloadInviteBtn">📩 Download Invitation Card</button>
+    </div>
+    <div class="music-note" style="text-align:center; display:block; margin: 8px auto 0;">🎶 Sweet celebration melody is playing 🍓🍼</div>
+  </div>
+  <div class="footer-note">
+    🍰 Please bring your sweetest blessings & smiles to Jojo's Private Resort 🍓
+  </div>
+</div>
+
+<!-- Background music: automatic sweet happy birthday instrumental / celebration tune (royalty-free) -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="Ultimate Happy Birthday song  Happy Birthday song remix.mp3" type="audio/mpeg">
+
+
+<script>
+
+  (function() {
+    const bgAudio = document.getElementById('bgMusic');
+    const downloadBtn = document.getElementById('downloadInviteBtn');
+    
+    // Set gentle volume for sweet background ambiance
+    bgAudio.volume = 0.35;
+    
+    // Function to attempt auto-play (many browsers require user interaction, but we try)
+    function attemptAutoPlay() {
+      bgAudio.play().then(() => {
+        console.log("🎵 Sweet music is playing automatically! 🍓");
+      }).catch(err => {
+        console.warn("Auto-play was blocked by browser. Adding one-click listener to start music:", err);
+        // If autoplay is blocked, start music on first click anywhere on the card
+        const startMusicOnInteraction = function() {
+          bgAudio.play().then(() => {
+            console.log("🎵 Music started after user interaction");
+            document.removeEventListener('click', startMusicOnInteraction);
+            document.removeEventListener('touchstart', startMusicOnInteraction);
+          }).catch(e => console.log("Still couldn't play music:", e));
+        };
+        // Also try to play on any user interaction with the invitation card
+        const card = document.getElementById('invitationCard');
+        if (card) {
+          card.addEventListener('click', startMusicOnInteraction);
+          card.addEventListener('touchstart', startMusicOnInteraction);
+        }
+        document.addEventListener('click', startMusicOnInteraction);
+        document.addEventListener('touchstart', startMusicOnInteraction);
+      });
+    }
+    
+    // Handle audio loading errors gracefully
+    bgAudio.addEventListener('error', () => {
+      const musicNote = document.querySelector('.music-note');
+      if (musicNote) {
+        musicNote.innerHTML = '🍓✨ Sweet melody currently unavailable, but our joy remains! (Invite still sweet)';
+      }
+    });
+    
+    // Start auto-play attempt when page loads
+    attemptAutoPlay();
+    
+    // ---------- DOWNLOAD INVITATION AS IMAGE (html2canvas) ----------
+    // Helper to load html2canvas dynamically and attach download handler
+    function loadHtml2CanvasAndAttach() {
+      if (typeof html2canvas !== 'undefined') {
+        attachDownloadHandler();
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = function() {
+        console.log('html2canvas ready for strawberry invitation');
+        attachDownloadHandler();
+      };
+      script.onerror = () => {
+        console.warn("Failed to load html2canvas, fallback to screenshot suggestion");
+        downloadBtn.addEventListener('click', () => alert("🍓 Please take a screenshot of the invitation to save it. Thank you! 🍰"));
+      };
+      document.head.appendChild(script);
+    }
+    
+    function attachDownloadHandler() {
+      // ---------- DOWNLOAD INVITATION PNG ----------
+downloadBtn.addEventListener('click', function () {
+    const originalText = downloadBtn.innerHTML;
+
+    downloadBtn.innerHTML = '🍓✨ Downloading Invitation... ✨🍓';
+    downloadBtn.disabled = true;
+
+    const link = document.createElement('a');
+
+    // Path to your invitation image
+    link.href = 'INVITATION.png';
+
+    // Download filename
+    link.download = 'JelynMae_Birthday_Christening.png';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    const musicNote = document.querySelector('.music-note');
+    const originalNote = musicNote.innerHTML;
+
+    musicNote.innerHTML = '✅ Invitation downloaded successfully! 🍓';
+
+    setTimeout(() => {
+        musicNote.innerHTML = originalNote;
+        downloadBtn.innerHTML = originalText;
+        downloadBtn.disabled = false;
+    }, 2500);
+});
+        
+    }
+    
+    // start loading process
+    if (typeof html2canvas !== 'undefined') {
+      attachDownloadHandler();
+    } else {
+      loadHtml2CanvasAndAttach();
+    }
+    
+    // Hover effect on card
+    const card = document.querySelector('.invitation-card');
+    if(card) {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.01)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+      });
+    }
+    
+    // Console greeting
+    console.log("🍓🎀 JELYN MAE O. AGOYAOY — 1st Birthday & Christening Invitation (June 18, 2026 at Jojo's Private Resort) 🎀🍓");
+    console.log("🎵 Music is set to auto-play for a sweet celebration atmosphere! 🍰");
+    
+    // Fallback if html2canvas takes too long to load
+    window.addEventListener('load', function() {
+      if (typeof html2canvas === 'undefined') {
+        const fallbackCheck = setInterval(() => {
+          if (typeof html2canvas !== 'undefined') {
+            clearInterval(fallbackCheck);
+            attachDownloadHandler();
+          }
+        }, 300);
+        setTimeout(() => clearInterval(fallbackCheck), 5000);
+      }
+    });
+    
+let musicStarted = false;
+
+document.getElementById('invitationCard').addEventListener('click', function(e){
+
+    if(!musicStarted){
+        bgAudio.play();
+        musicStarted = true;
+    }
+
+    const pop = document.createElement('div');
+
+    pop.className = 'balloon-pop';
+    pop.innerHTML = '🎈💖✨';
+
+    pop.style.left = e.clientX + 'px';
+    pop.style.top = e.clientY + 'px';
+
+    document.body.appendChild(pop);
+
+    setTimeout(() => {
+        pop.remove();
+    },1000);
+});
+  })();
+
+  
+</script>
+</body>
+</html>
